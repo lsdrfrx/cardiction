@@ -4,7 +4,7 @@ import 'package:flutter_desktop_test/src/pages/vocabulary.dart';
 
 void main() {
   const app = MaterialApp(
-    home: NewCardPage(),
+    home: VocabularyPage(),
   );
 
   runApp(app);

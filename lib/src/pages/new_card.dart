@@ -8,7 +8,7 @@ class NewCardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: CustomAppBar(title: ""),
       drawer: const CustomDrawer(),
       body: Column(
         children: [
