@@ -1,15 +1,13 @@
 import "package:flutter/material.dart";
-import "package:flutter_desktop_test/src/widgets/appbar.dart";
-import "package:flutter_desktop_test/src/widgets/drawer.dart";
+import "package:flutter_desktop_test/src/pages/base.dart";
 
-class Vocabulary extends StatelessWidget {
-  const Vocabulary({super.key});
+class VocabularyPage extends StatelessWidget {
+  const VocabularyPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(),
-      drawer: CustomDrawer(),
+    return BasePage(
+      title: "Vocabulary",
       body: Container(),
     );
   }
