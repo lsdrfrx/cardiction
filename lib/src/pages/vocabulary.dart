@@ -9,7 +9,7 @@ class Vocabulary extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(),
-      drawer: const CustomDrawer(),
+      drawer: CustomDrawer(),
       body: Container(),
     );
   }
