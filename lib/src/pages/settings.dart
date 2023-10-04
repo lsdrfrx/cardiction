@@ -7,6 +7,7 @@ class SettingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+      title: "Settings",
       body: Container(),
     );
   }

@@ -7,6 +7,7 @@ class VocabularyPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BasePage(
+      title: "Vocabulary",
       body: Container(),
     );
   }
