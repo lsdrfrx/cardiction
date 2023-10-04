@@ -9,7 +9,7 @@ class BasePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(),
+      appBar: const CustomAppBar(),
       drawer: const CustomDrawer(),
       body: body,
     );
