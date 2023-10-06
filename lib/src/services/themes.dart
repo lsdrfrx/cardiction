@@ -16,6 +16,9 @@ final darkTheme = lightTheme.copyWith(
       color: Colors.white70,
     ),
   ),
+  iconTheme: const IconThemeData(
+    color: Colors.white70,
+  ),
 );
 
 class AccentColors {

@@ -8,71 +8,98 @@ class NewCardPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return BasePage(
       title: "New card",
-      body: Stack(
+      body: Column(
         children: [
-          Column(mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-
-            // first card
-            const SizedBox(height: 30),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.lightBlueAccent,
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: Colors.black54, width: 4.0),
+          const SizedBox(height: 30),
+          Expanded(
+            child: Stack(
+              alignment: const Alignment(0.0, 0.0),
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    children: [
+                      // first card
+                      Expanded(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 700,
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 30),
+                            padding: const EdgeInsets.symmetric(vertical: 20),
+                            decoration: BoxDecoration(
+                              color: Colors.lightBlueAccent,
+                              borderRadius: BorderRadius.circular(10.0),
+                              border:
+                                  Border.all(color: Colors.black54, width: 4.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                      const SizedBox(height: 10),
+                      // second card
+                      Expanded(
+                        child: ConstrainedBox(
+                          constraints: const BoxConstraints(
+                            maxWidth: 700,
+                          ),
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 30),
+                            padding: const EdgeInsets.symmetric(vertical: 20),
+                            decoration: BoxDecoration(
+                              color: Colors.lightBlue[50],
+                              borderRadius: BorderRadius.circular(10.0),
+                              border:
+                                  Border.all(color: Colors.black54, width: 4.0),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
-              ),
-
-              // second card
-              const SizedBox(height: 30),
-              Expanded(
-                flex: 2,
-                child: Container(
-                  margin: const EdgeInsets.symmetric(horizontal: 30),
-                  padding: const EdgeInsets.symmetric(vertical: 20),
-                  decoration: BoxDecoration(
-                    color: Colors.lightBlue[50],
-                    borderRadius: BorderRadius.circular(10.0),
-                    border: Border.all(color: Colors.black54, width: 4.0),
+                Center(
+                  child: Container(
+                    width: 110,
+                    height: 110,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                      border: Border.all(color: Colors.black54, width: 4),
+                    ),
                   ),
                 ),
-              ),
-
-              // button in the bottom
-              const SizedBox(height: 30),
-              Align(
-                alignment: Alignment.bottomCenter,
-                child: Container(
-                  width: MediaQuery.of(context).size.width - 60,
-                  height: MediaQuery.of(context).size.width / 6,
-                  margin: const EdgeInsets.only(bottom: 30),
-                  decoration: BoxDecoration(
-                      color: Colors.white70,
-                      borderRadius: BorderRadius.circular(10),
-                      border: Border.all(color: Colors.black54, width: 4)
-                  ),
-                ),
-              ),
-            ]
+              ],
+            ),
           ),
 
-          // circular button
-              Center(
-                child: Container(
-                width: 110,
-                height: 110,
+          const SizedBox(height: 30),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(
+                minHeight: 60,
+                maxHeight: 60,
+                minWidth: 200,
+                maxWidth: double.infinity,
+              ),
+              // width: MediaQuery.of(context).size.width - 60,
+              // height: MediaQuery.of(context).size.width / 6,
+              // margin: const EdgeInsets.only(bottom: 30),
+              child: DecoratedBox(
                 decoration: BoxDecoration(
-                  color: Colors.white,
-                  shape: BoxShape.circle,
+                  color: Colors.white70,
+                  borderRadius: BorderRadius.circular(10),
                   border: Border.all(color: Colors.black54, width: 4),
                 ),
               ),
+            ),
           ),
+          const SizedBox(height: 30),
+          // circular button
+          // Center(
+          // ),
         ],
       ),
     );
