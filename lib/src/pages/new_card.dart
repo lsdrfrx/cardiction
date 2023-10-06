@@ -1,55 +1,77 @@
 import "package:flutter/material.dart";
-import "package:flutter_desktop_test/src/widgets/appbar.dart";
-import "package:flutter_desktop_test/src/widgets/drawer.dart";
+import "package:flutter_desktop_test/src/pages/base.dart";
 
 class NewCardPage extends StatelessWidget {
   const NewCardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: CustomAppBar(title: ""),
-      drawer: const CustomDrawer(),
-      body: Column(
+    return BasePage(
+      title: "New card",
+      body: Stack(
         children: [
+          Column(mainAxisAlignment: MainAxisAlignment.center,
+            children: [
 
-          const SizedBox(height: 30),
-          Container(
-            height: MediaQuery.of(context).size.height / 3,
-            margin: const EdgeInsets.only(left: 30, right: 30),
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            decoration: BoxDecoration(
-              color: Colors.lightBlueAccent,
-              borderRadius: BorderRadius.circular(10.0),
-              border: Border.all(color: Colors.black54, width: 4.0),
-            ),
+            // first card
+            const SizedBox(height: 30),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlueAccent,
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: Colors.black54, width: 4.0),
+                  ),
+                ),
+              ),
+
+              // second card
+              const SizedBox(height: 30),
+              Expanded(
+                flex: 2,
+                child: Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 30),
+                  padding: const EdgeInsets.symmetric(vertical: 20),
+                  decoration: BoxDecoration(
+                    color: Colors.lightBlue[50],
+                    borderRadius: BorderRadius.circular(10.0),
+                    border: Border.all(color: Colors.black54, width: 4.0),
+                  ),
+                ),
+              ),
+
+              // button in the bottom
+              const SizedBox(height: 30),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  width: MediaQuery.of(context).size.width - 60,
+                  height: MediaQuery.of(context).size.width / 6,
+                  margin: const EdgeInsets.only(bottom: 30),
+                  decoration: BoxDecoration(
+                      color: Colors.white70,
+                      borderRadius: BorderRadius.circular(10),
+                      border: Border.all(color: Colors.black54, width: 4)
+                  ),
+                ),
+              ),
+            ]
           ),
 
-          const SizedBox(height: 30),
-          Container(
-            height: MediaQuery.of(context).size.height / 3,
-            margin: const EdgeInsets.only(left: 30, right: 30),
-            padding: const EdgeInsets.symmetric(vertical: 20),
-            decoration: BoxDecoration(
-              color: Colors.lightBlue[50],
-              borderRadius: BorderRadius.circular(10.0),
-              border: Border.all(color: Colors.black54, width: 4.0),
-            ),
-          ),
-
-          const SizedBox(height: 30),
-          Container(
-            // width: MediaQuery.of(context).size.width - 60,
-            height: 60,
-            margin: const EdgeInsets.only(left: 30, right: 30, bottom: 30),
-            decoration: BoxDecoration(
-              color: Colors.white70,
-              borderRadius: BorderRadius.circular(10),
-              border: Border.all(color: Colors.black54, width: 4),
-            ),
-            child: const Center(
-              child: Text('Save card', style: TextStyle(fontSize: 30),),
-            ),
+          // circular button
+              Center(
+                child: Container(
+                width: 110,
+                height: 110,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                  shape: BoxShape.circle,
+                  border: Border.all(color: Colors.black54, width: 4),
+                ),
+              ),
           ),
         ],
       ),
