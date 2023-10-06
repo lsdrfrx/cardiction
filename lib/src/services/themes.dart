@@ -6,7 +6,7 @@ final darkTheme = lightTheme.copyWith(
   brightness: Brightness.dark,
   scaffoldBackgroundColor: const Color.fromRGBO(33, 33, 33, 1),
   appBarTheme: const AppBarTheme(
-    foregroundColor: Colors.white70,
+    foregroundColor: Color.fromRGBO(33, 33, 33, 1),
   ),
   drawerTheme: const DrawerThemeData(
     backgroundColor: Color.fromRGBO(33, 33, 33, 1),
